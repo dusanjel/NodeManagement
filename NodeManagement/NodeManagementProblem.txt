@@ -1,0 +1,26 @@
+Description:
+The Network Operations team needs a web, or windows application to allow them to manage various "network nodes". 
+
+Primary criteria:
+* Ensure the user can add/remove nodes to the network.
+* Ensure the user can bring individual nodes online/offline.
+* Ensure the user can see the online/offline status of nodes.
+* Ensure all of the metrics of a node are displayed to the user.
+* Ensure maximum threshold values can be set for metrics.
+* Ensure a visual alarm is displayed when any of the metrics exceed maximum limits.
+
+Bonus criteria suggestions (any/all/none):
+* UI: Everyone likes eye-candy.  Make the UI slick and intuitive.
+* UI: Sometimes users are on-the-go.  Add some way for them to view on a mobile device
+* UI: Nodes are all deployed to a geographical location.  
+* Logic: The random metrics are static.  Have the metrics update regularly
+* General: Improve the NodeManager - Consider things like: performance, error handling, daylight savings
+* General: Increase unit test code coverage
+* Network: Some of our external partners would like to use this functionality.  Expose the application logic through WCF or REST service
+* ???: Surprise us :).
+
+Additional Notes:
+* This is a simulated problem.  No physical network nodes exist to be used.
+* Use best practices in your design and coding.
+* Interfaces and classes have been provided as a starting point.
+* Third Party APIs, libraries, frameworks and services may be leveraged (e.g., Google, Bing etc.,), but they must be legal, and accessible by us.
