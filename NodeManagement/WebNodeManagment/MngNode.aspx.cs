@@ -16,57 +16,99 @@ namespace WebNodeManagment
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
-            {
-                
+            {                
             }
-            getConnectionStatus();
+            try
+            {
+                getConnectionStatus();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public int getClientsThreshold()
         {
-            int nodeID = Int32.Parse(TreeView1.SelectedNode.Value);
-            Node nd = (Node)nMng.GetNode(nodeID);            
-            return (int)nd.ClientsThreshold;
+            try
+            {
+                int nodeID = Int32.Parse(TreeView1.SelectedNode.Value);
+                Node nd = (Node)nMng.GetNode(nodeID);
+                return (int)nd.ClientsThreshold;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }            
         }
 
         public int getDownloadThreshold()
         {
-            int nodeID = Int32.Parse(TreeView1.SelectedNode.Value);
-            Node nd = (Node)nMng.GetNode(nodeID);
-            return (int)nd.DownloadThreshold;
+            try
+            {
+                int nodeID = Int32.Parse(TreeView1.SelectedNode.Value);
+                Node nd = (Node)nMng.GetNode(nodeID);
+                return (int)nd.DownloadThreshold;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public int getErrorThreshold()
         {
-            int nodeID = Int32.Parse(TreeView1.SelectedNode.Value);
-            Node nd = (Node)nMng.GetNode(nodeID);
-            return (int)nd.ErrorThreshold;
+            try
+            {
+                int nodeID = Int32.Parse(TreeView1.SelectedNode.Value);
+                Node nd = (Node)nMng.GetNode(nodeID);
+                return (int)nd.ErrorThreshold;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
         public int getUploadThreshold()
         {
-            int nodeID = Int32.Parse(TreeView1.SelectedNode.Value);
-            Node nd = (Node)nMng.GetNode(nodeID);
-            return (int)nd.UploadThreshold;
+            try
+            {
+                int nodeID = Int32.Parse(TreeView1.SelectedNode.Value);
+                Node nd = (Node)nMng.GetNode(nodeID);
+                return (int)nd.UploadThreshold;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public void createNode(int id,string City)
         {
-            Node newNode = new Node(id, City, new Random());
-            newNode.UploadThreshold = float.Parse(txtUpload.Text);
-            newNode.DownloadThreshold = float.Parse(txtDownload.Text);
-            newNode.ErrorThreshold = float.Parse(txtError.Text);
-            newNode.ClientsThreshold = uint.Parse(txtClients.Text);
-
-            nMng.AddNode(newNode);
-
-            TreeNode TreeCNode = new TreeNode
+            try
             {
-                Text = id.ToString(),
-                Value = id.ToString()
-            };
-            //TreePNode.ChildNodes.Add(TreeCNode);
-            TreeView1.Nodes.Add(TreeCNode);
+                Node newNode = new Node(id, City, new Random());
+                newNode.UploadThreshold = float.Parse(txtUpload.Text);
+                newNode.DownloadThreshold = float.Parse(txtDownload.Text);
+                newNode.ErrorThreshold = float.Parse(txtError.Text);
+                newNode.ClientsThreshold = uint.Parse(txtClients.Text);
+
+                nMng.AddNode(newNode);
+
+                TreeNode TreeCNode = new TreeNode
+                {
+                    Text = id.ToString(),
+                    Value = id.ToString()
+                };
+                //TreePNode.ChildNodes.Add(TreeCNode);
+                TreeView1.Nodes.Add(TreeCNode);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }       
 
         protected void PrButton_Click(object sender, EventArgs e)
@@ -75,38 +117,61 @@ namespace WebNodeManagment
         }
 
         protected void ButtonRemove_Click(object sender, EventArgs e)
-        {         
-            int nodeID = Int32.Parse(TreeView1.SelectedNode.Value);
-            nMng.RemoveNode(nodeID);
-            TreeView1.Nodes.Remove(TreeView1.SelectedNode);           
+        {
+            try
+            {
+                int nodeID = Int32.Parse(TreeView1.SelectedNode.Value);
+                nMng.RemoveNode(nodeID);
+                TreeView1.Nodes.Remove(TreeView1.SelectedNode);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }          
         }
 
         protected void ButtonOnline_Click(object sender, EventArgs e)
         {
-            int nodeID = Int32.Parse(TreeView1.SelectedNode.Value);
-
-            foreach (Node nd in nMng.GetNodes())
+            try
             {
-                if (nd.NodeId == nodeID)
+                int nodeID = Int32.Parse(TreeView1.SelectedNode.Value);
+
+                foreach (Node nd in nMng.GetNodes())
                 {
-                    nd.SetOnline();                    
-                }               
+                    if (nd.NodeId == nodeID)
+                    {
+                        nd.SetOnline();
+                    }
+                }
+                getConnectionStatus();
             }
-            getConnectionStatus();
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
         protected void ButtonOffliine_Click(object sender, EventArgs e)
         {
-            int nodeID = Int32.Parse(TreeView1.SelectedNode.Value);
-
-            foreach (Node nd in nMng.GetNodes())
+            try
             {
-                if (nd.NodeId == nodeID)
+                int nodeID = Int32.Parse(TreeView1.SelectedNode.Value);
+
+                foreach (Node nd in nMng.GetNodes())
                 {
-                    nd.SetOffline();                    
-                }                
+                    if (nd.NodeId == nodeID)
+                    {
+                        nd.SetOffline();
+                    }
+                }
+                getConnectionStatus();
             }
-            getConnectionStatus();
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
         protected void TreeView1_SelectedNodeChanged(object sender, EventArgs e)
@@ -116,49 +181,56 @@ namespace WebNodeManagment
 
         public void getConnectionStatus()
         {
-            if (TreeView1.SelectedNode != null)
+            try
             {
-                int nodeID = Int32.Parse(TreeView1.SelectedNode.Value);
-                foreach (Node nd in nMng.GetNodes())
+                if (TreeView1.SelectedNode != null)
                 {
-                    if (nd.NodeId == nodeID)
+                    int nodeID = Int32.Parse(TreeView1.SelectedNode.Value);
+                    foreach (Node nd in nMng.GetNodes())
                     {
-                        txtConnection.Text = nd.IsOnline.ToString();
-                        txtID.Text = nd.NodeId.ToString();
-                        txtCity.Text = nd.City;
-                        txtConnectedClients.Text = nd.ConnectedClients.ToString();
-                        txtDownloadUtilization.Text = nd.DownloadUtilization.ToString();
-                        txtErrorRate.Text = nd.ErrorRate.ToString();
-                        txtOnlineTime.Text = nd.OnlineTime.ToString();
-                        txtCity.Text = nd.UploadUtilization.ToString();
-                        TextBoxNodeId.Text = nd.NodeId.ToString();
+                        if (nd.NodeId == nodeID)
+                        {
+                            txtConnection.Text = nd.IsOnline.ToString();
+                            txtID.Text = nd.NodeId.ToString();
+                            txtCity.Text = nd.City;
+                            txtConnectedClients.Text = nd.ConnectedClients.ToString();
+                            txtDownloadUtilization.Text = nd.DownloadUtilization.ToString();
+                            txtErrorRate.Text = nd.ErrorRate.ToString();
+                            txtOnlineTime.Text = nd.OnlineTime.ToString();
+                            txtCity.Text = nd.UploadUtilization.ToString();
+                            TextBoxNodeId.Text = nd.NodeId.ToString();
 
-                        if (nd.ConnectedClients > getClientsThreshold())
-                        {
-                            lblConnectedClientsTr.Text = "Threshold";
+                            if (nd.ConnectedClients > getClientsThreshold())
+                            {
+                                lblConnectedClientsTr.Text = "Threshold";
+                            }
+                            else
+                                lblConnectedClientsTr.Text = "";
+                            if (nd.UploadUtilization > getUploadThreshold())
+                            {
+                                lblErrorRateTr.Text = "Threshold";
+                            }
+                            else
+                                lblErrorRateTr.Text = "";
+                            if (nd.DownloadThreshold > getDownloadThreshold())
+                            {
+                                lblDownloadUtilizationTr.Text = "Threshold";
+                            }
+                            else
+                                lblDownloadUtilizationTr.Text = "";
+                            if (nd.ErrorRate > getErrorThreshold())
+                            {
+                                lblErrorRateTr.Text = "Threshold";
+                            }
+                            else
+                                lblErrorRateTr.Text = "";
                         }
-                        else
-                            lblConnectedClientsTr.Text = "";
-                        if (nd.UploadUtilization > getUploadThreshold())
-                        {
-                            lblErrorRateTr.Text = "Threshold";
-                        }
-                        else
-                            lblErrorRateTr.Text = "";
-                        if (nd.DownloadThreshold > getDownloadThreshold())
-                        {
-                            lblDownloadUtilizationTr.Text = "Threshold";
-                        }
-                        else
-                            lblDownloadUtilizationTr.Text = "";
-                        if (nd.ErrorRate > getErrorThreshold())
-                        {
-                            lblErrorRateTr.Text = "Threshold";
-                        }
-                        else
-                            lblErrorRateTr.Text = "";
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
     }

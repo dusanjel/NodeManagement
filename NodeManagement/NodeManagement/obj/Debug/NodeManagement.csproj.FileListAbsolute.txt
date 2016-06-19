@@ -3,3 +3,8 @@ C:\Users\DJ250153\AppData\Dokumenta\PROJEKTI\CodeProblem-NodeManagement\NodeMana
 C:\Users\DJ250153\AppData\Dokumenta\PROJEKTI\CodeProblem-NodeManagement\NodeManagement\obj\Debug\NodeManagement.csprojResolveAssemblyReference.cache
 C:\Users\DJ250153\AppData\Dokumenta\PROJEKTI\CodeProblem-NodeManagement\NodeManagement\obj\Debug\ServiceManager.dll
 C:\Users\DJ250153\AppData\Dokumenta\PROJEKTI\CodeProblem-NodeManagement\NodeManagement\obj\Debug\ServiceManager.pdb
+C:\Users\DJ250153\GIT\NodeManagement\NodeManagement\bin\Debug\ServiceManager.dll
+C:\Users\DJ250153\GIT\NodeManagement\NodeManagement\bin\Debug\ServiceManager.pdb
+C:\Users\DJ250153\GIT\NodeManagement\NodeManagement\obj\Debug\NodeManagement.csprojResolveAssemblyReference.cache
+C:\Users\DJ250153\GIT\NodeManagement\NodeManagement\obj\Debug\ServiceManager.dll
+C:\Users\DJ250153\GIT\NodeManagement\NodeManagement\obj\Debug\ServiceManager.pdb

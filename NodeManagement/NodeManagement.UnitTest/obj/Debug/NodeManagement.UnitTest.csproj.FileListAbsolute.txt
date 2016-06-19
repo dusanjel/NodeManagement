@@ -6,3 +6,11 @@ C:\Users\DJ250153\AppData\Dokumenta\PROJEKTI\CodeProblem-NodeManagement\NodeMana
 C:\Users\DJ250153\AppData\Dokumenta\PROJEKTI\CodeProblem-NodeManagement\NodeManagement.UnitTest\obj\Debug\NodeManagement.UnitTest.csprojResolveAssemblyReference.cache
 C:\Users\DJ250153\AppData\Dokumenta\PROJEKTI\CodeProblem-NodeManagement\NodeManagement.UnitTest\obj\Debug\NodeManagement.UnitTest.dll
 C:\Users\DJ250153\AppData\Dokumenta\PROJEKTI\CodeProblem-NodeManagement\NodeManagement.UnitTest\obj\Debug\NodeManagement.UnitTest.pdb
+C:\Users\DJ250153\GIT\NodeManagement\NodeManagement.UnitTest\bin\Debug\NodeManagement.UnitTest.dll
+C:\Users\DJ250153\GIT\NodeManagement\NodeManagement.UnitTest\bin\Debug\NodeManagement.UnitTest.pdb
+C:\Users\DJ250153\GIT\NodeManagement\NodeManagement.UnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\DJ250153\GIT\NodeManagement\NodeManagement.UnitTest\bin\Debug\ServiceManager.dll
+C:\Users\DJ250153\GIT\NodeManagement\NodeManagement.UnitTest\bin\Debug\ServiceManager.pdb
+C:\Users\DJ250153\GIT\NodeManagement\NodeManagement.UnitTest\obj\Debug\NodeManagement.UnitTest.csprojResolveAssemblyReference.cache
+C:\Users\DJ250153\GIT\NodeManagement\NodeManagement.UnitTest\obj\Debug\NodeManagement.UnitTest.dll
+C:\Users\DJ250153\GIT\NodeManagement\NodeManagement.UnitTest\obj\Debug\NodeManagement.UnitTest.pdb
