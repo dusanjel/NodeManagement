@@ -28,6 +28,8 @@ namespace WebNodeManagment
             }
         }
 
+        #region Thresholds
+
         public int getClientsThreshold()
         {
             try
@@ -84,6 +86,8 @@ namespace WebNodeManagment
                 throw ex;
             }
         }
+
+        #endregion 
 
         public void createNode(int id,string City)
         {
